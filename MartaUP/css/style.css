@@ -30,6 +30,7 @@
 .page {
   font-family: 'Source Sans Pro';
   max-width: 1920px;
+  min-width: 1170px;
   margin: 0 auto;
 }
 
