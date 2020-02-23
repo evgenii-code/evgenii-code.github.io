@@ -1,0 +1,9 @@
+.video__container {
+  max-width: 1184px;
+  margin: 0 auto;
+  margin-top: 63px;
+  display: grid;
+  grid-template-columns: repeat(2, 583px);
+  grid-auto-rows: 323px;
+  grid-gap: 18px;
+}

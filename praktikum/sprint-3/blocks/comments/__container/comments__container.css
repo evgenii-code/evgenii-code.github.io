@@ -1,0 +1,6 @@
+.comments__container {
+  margin-top: 63px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

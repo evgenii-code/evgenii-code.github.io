@@ -1,0 +1,12 @@
+@import url('./_line-height/content-title_line-height_normal.css');
+@import url('./_line-height/content-title_line-height_small.css');
+
+.content-title {
+  width: 800px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 72px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0 auto;
+}

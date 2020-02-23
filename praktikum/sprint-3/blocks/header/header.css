@@ -1,0 +1,19 @@
+@import url('./__lang-items/header__lang-items.css');
+@import url('./__lang-item/header__lang-item.css');
+@import url('./__lang/header__lang.css');
+@import url('./__lang/_selected/header__lang_selected.css');
+@import url('./__logo/header__logo.css');
+
+.header {
+  max-width: 1440px;
+  min-width: 1280px;
+  min-height: 52px;
+  margin: 0 auto;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-style: normal;
+  font-weight: normal;
+  color: #FFFFFF;
+}
