@@ -1,11 +1,11 @@
-@import url('./__title/intro__title.css');
-@import url('./__subtitle/intro__subtitle.css');
-@import url('./__content-row/intro__content-row.css');
-@import url('./__text/intro__text.css');
-@import url('./__text-bold/intro__text-bold.css');
-@import url('./__content-column/intro__content-column.css');
-@import url('./__content-column/_main/intro__content-column_main.css');
-@import url('./__text-author/intro__text-author.css');
+@import url('__title/intro__title.css');
+@import url('__subtitle/intro__subtitle.css');
+@import url('__content-row/intro__content-row.css');
+@import url('__text/intro__text.css');
+@import url('__text-bold/intro__text-bold.css');
+@import url('__content-column/intro__content-column.css');
+@import url('__content-column/_main/intro__content-column_main.css');
+@import url('__text-author/intro__text-author.css');
 
 .intro {
   width: 984px;

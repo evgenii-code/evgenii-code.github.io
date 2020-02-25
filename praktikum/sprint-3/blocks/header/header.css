@@ -1,8 +1,8 @@
-@import url('./__lang-items/header__lang-items.css');
-@import url('./__lang-item/header__lang-item.css');
-@import url('./__lang/header__lang.css');
-@import url('./__lang/_selected/header__lang_selected.css');
-@import url('./__logo/header__logo.css');
+@import url('__lang-items/header__lang-items.css');
+@import url('__lang-item/header__lang-item.css');
+@import url('__lang/header__lang.css');
+@import url('__lang/_selected/header__lang_selected.css');
+@import url('__logo/header__logo.css');
 
 .header {
   max-width: 1440px;

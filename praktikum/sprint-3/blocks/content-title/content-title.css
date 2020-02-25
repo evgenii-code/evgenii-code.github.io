@@ -1,5 +1,5 @@
-@import url('./_line-height/content-title_line-height_normal.css');
-@import url('./_line-height/content-title_line-height_small.css');
+@import url('_line-height/content-title_line-height_normal.css');
+@import url('_line-height/content-title_line-height_small.css');
 
 .content-title {
   width: 800px;

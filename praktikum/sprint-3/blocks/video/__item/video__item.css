@@ -1,5 +1,5 @@
-@import url('./_type/video__item_type_kamchatka.css');
-@import url('./_type/video__item_type_observatory.css');
+@import url('_type/video__item_type_kamchatka.css');
+@import url('_type/video__item_type_observatory.css');
 
 .video__item {
   width: 583px;
