@@ -1,0 +1,9 @@
+@import url('./_size/intro__text_size_small.css');
+@import url('./_size/intro__text_size_normal.css');
+@import url('./_size/intro__text_size_big.css');
+
+.intro__text {
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}

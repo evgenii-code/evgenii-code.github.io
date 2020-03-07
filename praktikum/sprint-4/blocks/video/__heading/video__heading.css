@@ -1,0 +1,20 @@
+.video__heading {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 1;
+}
+
+@media (max-width: 1023px) {
+  .video__heading {
+    bottom: 24px;
+    left: 24px;
+  }
+}
+
+@media (max-width: 374px) {
+  .video__heading {
+    bottom: 16px;
+    left: 16px;
+  }
+}

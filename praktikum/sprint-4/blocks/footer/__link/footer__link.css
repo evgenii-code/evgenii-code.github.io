@@ -1,0 +1,22 @@
+.footer__link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 41px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+@media (max-width: 1023px) {
+  .footer__link {
+    font-size: 16px;
+    line-height: 27px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__link {
+    font-size: 24px;
+    line-height: 41px;
+  }
+}

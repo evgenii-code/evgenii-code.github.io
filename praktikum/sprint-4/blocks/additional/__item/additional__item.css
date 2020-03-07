@@ -1,0 +1,16 @@
+@import url('./_type/additional__item_type_n-1.css');
+@import url('./_type/additional__item_type_n-2.css');
+@import url('./_type/additional__item_type_n-3.css');
+@import url('./_type/additional__item_type_n-4.css');
+
+.additional__item {
+  width: 284px;
+  height: 330px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 18px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

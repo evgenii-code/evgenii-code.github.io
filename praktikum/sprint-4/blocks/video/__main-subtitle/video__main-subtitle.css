@@ -1,0 +1,9 @@
+.video__main-subtitle {
+  margin-top: 33px;
+}
+
+@media (max-width: 425px) {
+  .video__main-subtitle {
+    margin-top: 20px;
+  }
+}

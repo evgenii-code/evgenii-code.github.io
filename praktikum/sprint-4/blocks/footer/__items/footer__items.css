@@ -1,0 +1,11 @@
+.footer__items {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .footer__items {
+    display: block;
+  }
+}

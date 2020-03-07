@@ -1,0 +1,9 @@
+.comments__subtitle {
+  margin-top: 38px;
+}
+
+@media (max-width: 425px) {
+  .comments__subtitle {
+    margin-top: 20px;
+  }
+}

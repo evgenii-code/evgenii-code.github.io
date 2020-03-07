@@ -1,0 +1,11 @@
+.intro__text_size_normal {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+@media (max-width: 425px) {
+  .intro__text_size_normal {
+    font-size: 12px;
+    line-height: 19px;
+  }
+}

@@ -1,0 +1,16 @@
+.intro__content-row {
+  display: flex;
+  margin: 35px 0;
+}
+
+@media (max-width: 768px) {
+  .intro__content-row {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 425px) {
+  .intro__content-row {
+    margin-bottom: 33px;
+  }
+}

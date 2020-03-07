@@ -1,0 +1,5 @@
+@media (max-width: 767px) {
+  .place__section_hidden-on-mobile {
+    display: none;
+  }
+}

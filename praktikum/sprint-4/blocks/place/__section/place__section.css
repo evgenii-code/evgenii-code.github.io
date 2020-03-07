@@ -1,0 +1,18 @@
+.place__section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .place__section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 425px) {
+  .place__section {
+    padding-left: 16px;
+    padding-right: 15px;
+  }
+}

@@ -1,0 +1,39 @@
+@import url('./__title/intro__title.css');
+@import url('./__subtitle/intro__subtitle.css');
+@import url('./__content-row/intro__content-row.css');
+@import url('./__text/intro__text.css');
+@import url('./__text-bold/intro__text-bold.css');
+@import url('./__content-column/intro__content-column.css');
+@import url('./__content-column/_main/intro__content-column_main.css');
+@import url('./__text-author/intro__text-author.css');
+
+.intro {
+  min-width: 288px;
+  max-width: 984px;
+  margin: 0 auto;
+  padding-top: 70px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+@media (max-width: 1280px) {
+  .intro {
+    width: calc(100% - 96px);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  .intro {
+    width: calc(100% - 48px);
+    padding-top: 62px;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+}

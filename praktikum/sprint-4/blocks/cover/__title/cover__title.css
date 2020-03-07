@@ -1,0 +1,28 @@
+.cover__title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  margin: 0;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 78px;
+  color: #FFFDFD;
+  z-index: 1;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .cover__title {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cover__title {
+    font-size: 32px;
+    line-height: 35px;
+    width: 240px;
+  }
+}

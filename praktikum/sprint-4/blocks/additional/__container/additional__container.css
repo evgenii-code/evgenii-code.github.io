@@ -1,0 +1,7 @@
+.additional__container {
+  display: grid;
+  grid-template-columns: repeat(4, 284px);
+  grid-auto-rows: 330px;
+  grid-gap: 16px;
+  margin-top: 62px;
+}

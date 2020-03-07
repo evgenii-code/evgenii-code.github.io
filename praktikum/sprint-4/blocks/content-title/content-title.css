@@ -1,0 +1,28 @@
+@import url('./_line-height/content-title_line-height_normal.css');
+@import url('./_line-height/content-title_line-height_small.css');
+
+.content-title {
+  width: 800px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 72px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0 auto;
+}
+
+@media (max-width: 1023px) {
+  .content-title {
+    font-size: 42px;
+    line-height: 46px;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-title {
+    font-size: 32px;
+    line-height: 35px;
+    width: 100%;
+  }
+}

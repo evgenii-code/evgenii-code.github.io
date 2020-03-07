@@ -1,0 +1,13 @@
+.cover__image {
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .cover__image {
+    object-fit: cover;
+    min-height: 272px;
+  }
+}

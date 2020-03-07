@@ -1,0 +1,14 @@
+.lead__image {
+  margin-top: 70px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+@media (max-width: 1024px) {
+  .lead__image {
+    /* max-width: 928px; */
+    margin-top: 74px;
+  }
+}

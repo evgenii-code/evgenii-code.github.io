@@ -1,0 +1,13 @@
+.header__lang {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 23px;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .header__lang {
+    font-size: 18px;
+    line-height: 17px;
+  }
+}
