@@ -1,0 +1,8 @@
+.header__logo-link {
+  background-image: url('../../../images/logo-default-197x54.png');
+  width: 197px;
+  min-width: 197px;
+  height: 54px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

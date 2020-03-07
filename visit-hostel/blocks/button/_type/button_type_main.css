@@ -1,0 +1,30 @@
+.button_type_main {
+  border: 2px solid rgba(21, 21, 21, 1);
+  background-color: transparent;
+  transition: border-color .2s;
+  z-index: 1;
+}
+
+.button_type_main:hover {
+  border-color: #ffdb73;
+  color: #ffffff;
+}
+
+.button_type_main:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 100%;
+  background-color: #ffdb73;
+  transition: .2s;
+  z-index: -1;
+  opacity: 0;
+}
+
+.button_type_main:hover:before {
+  left: 0;
+  width: 100%;
+  opacity: 1;
+}

@@ -1,0 +1,11 @@
+@import url('_hover/header__link_hover_upperline.css');
+@import url('_hover/header__link_hover_colored.css');
+
+.header__link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 23px 20px 16px;
+  text-transform: uppercase;
+}

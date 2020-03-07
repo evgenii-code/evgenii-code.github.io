@@ -1,0 +1,8 @@
+.header__bottom {
+  background-color: rgb(68, 67, 73);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*min-height: 60px;*/
+}

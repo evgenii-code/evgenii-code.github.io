@@ -1,0 +1,17 @@
+@import url('_type/button_type_main.css');
+@import url('');
+@import url('_size/button_size_small.css');
+@import url('_size/button_size_normal.css');
+@import url('_size/button_size_big.css');
+
+.button {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 33px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
