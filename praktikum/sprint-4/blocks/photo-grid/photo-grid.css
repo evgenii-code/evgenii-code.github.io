@@ -28,9 +28,18 @@
   .photo-grid {
     padding-top: 68px;
     width: calc(100% - 32px);
-    grid-gap: 9px;
+    grid-gap: 16px;
   }
 }
+
+@media (max-width: 320px) {
+  .photo-grid {
+    padding-top: 68px;
+    width: calc(100% - 32px);
+    grid-gap: 8px;
+  }
+}
+
 
 
 

@@ -1,0 +1,32 @@
+.cover__link_background {
+  background-image: url('../../../../images/cover-Image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cover__link_background:before {
+  content: "";
+  width: 100%;
+  padding-bottom: 50%;
+}
+
+@media (max-width: 1024px) {
+  .cover__link_background:before {
+    padding-bottom: 54.883%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cover__link_background {
+    object-fit: cover;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cover__link_background {
+    object-fit: cover;
+    min-height: 272px;
+  }
+}

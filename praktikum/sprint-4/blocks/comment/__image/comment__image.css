@@ -1,3 +1,8 @@
+.comment__image {
+  border-radius: 50%;
+}
+
+
 @media (max-width: 768px) {
   .comment__image {
     order: 1;

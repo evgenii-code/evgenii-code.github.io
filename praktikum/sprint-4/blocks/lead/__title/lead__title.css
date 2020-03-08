@@ -12,8 +12,17 @@
 @media (max-width: 740px) {
   .lead__title {
     margin-top: 41px;
+    font-size: 10.667vw;
+    width: 90%;
+    line-height: 11.733vw;
+  }
+}
+
+@media (max-width: 375px) {
+  .lead__title {
+    margin-top: 41px;
     font-size: 40px;
-    width: 288px;
+    width: 90%;
     line-height: 44px;
   }
 }

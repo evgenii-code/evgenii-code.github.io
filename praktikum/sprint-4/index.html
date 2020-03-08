@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Путешествия по России</title>
+  <!-- Можно лучше: подключите normalize перед подключением стилей в head -->
+
+  <!-- + -->
+  <link rel="stylesheet" href="vendor/normalize.css">
   <link rel="stylesheet" href="pages/index.css">
 </head>
 
@@ -15,6 +19,9 @@
     <ul class="header__lang-items">
       <li class="header__lang-item">
         <a href="#" class="header__lang header__lang_selected link">Ru</a>
+        <!-- Отлично! Выбранный язык реализован с помощью модификатора -->
+
+        <!-- + -->
       </li>
 
       <li class="header__lang-item">
@@ -26,39 +33,62 @@
   <main class="main">
     <section class="lead">
       <h1 class="lead__title">Путешествия по России</h1>
-      <h2 class="lead__subtitle">Настоящая страна не в выпусках новостей, а здесь.</h2>
-      <img src="images/lead__image.jpg" alt="Изображение плацкарт" class="lead__image">
-      <p class="lead__caption">ваша полка — верхняя</p>
+      <!-- Отлично! правильно выделен заголовок страницы и обозначен тегом h1 -->
+
+      <!-- + -->
+      <p class="lead__subtitle">Настоящая страна не в выпусках новостей, а здесь.</p>
+      <!-- Можно лучше: используйте для подзаголовков параграфы -->
+
+      <!-- + -->
+      <figure class="lead__illustration">
+        <img src="images/lead__image.jpg" alt="Изображение плацкарт" class="lead__image">
+        <figcaption class="lead__caption">ваша полка — верхняя</figcaption>
+      </figure>
+        <!-- Можно лучше: для изображения и его описания можете использовать тег figure
+        https://developer.mozilla.org/ru/docs/Web/HTML/Element/figure -->
+
+        <!-- + -->
     </section>
 
     <section class="intro">
       <h2 class="intro__title">Чего мы там не видели?</h2>
 
       <section class="intro__content-row">
-        <div class="intro__content-column intro__content-column_main">
-          <p class="intro__text intro__text_size_big">По опросам ВЦИОМ, 95% россиян мечтают куда-нибудь поехать, но только 36% планируют провести отпуск в родной стране. Мол, чего мы тут, дома, не видели? На самом деле, Россия — это целая вселенная с ласковым морем юга, густыми лесами Саян и суровыми льдами плато Путорана. А ещё увидеть все эти красоты можно без миллионов на счету, загранпаспорта и многочасовых перелетов. Как, например, Вера Башмакова — смелая молодая мама, которая взяла в охапку троих детей, усадила их в свою «Ладу» и проехала 20 тысяч километров по родной стране. Мы выбрали и описали некоторые интересные места, достойные вашего отпуска.</p>
+        <div class="intro__content-column">
+          <!-- Надо исправить: удалите лишний модификатор intro__content-column_mai и перенесите стили в основной класс intro__content-column -->
+
+          <!-- + -->
+          <p class="intro__main-text">По опросам ВЦИОМ, 95% россиян мечтают куда-нибудь поехать, но только 36% планируют провести отпуск в родной стране. Мол, чего мы тут, дома, не видели? На самом деле, Россия — это целая вселенная с ласковым морем юга, густыми лесами Саян и суровыми льдами плато Путорана. А ещё увидеть все эти красоты можно без миллионов на счету, загранпаспорта и многочасовых перелетов. Как, например, Вера Башмакова — смелая молодая мама, которая взяла в охапку троих детей, усадила их в свою «Ладу» и проехала 20 тысяч километров по родной стране. Мы выбрали и описали некоторые интересные места, достойные вашего отпуска.</p>
         </div>
       </section>
 
-      <p class="intro__text intro__text_size_normal">
+      <p class="intro__statistics-text">
         <b class="intro__text-bold">Часовых поясов</b> 11
       </p>
       
-      <p class="intro__text intro__text_size_normal">
+      <p class="intro__statistics-text">
         <b class="intro__text-bold">Объектов природного наследия ЮНЕСКО</b> 12
       </p>
       
-      <p class="intro__text intro__text_size_normal">
+      <p class="intro__statistics-text">
         <b class="intro__text-bold">Объектов культурного наследия ЮНЕСКО</b> 16
       </p>
       
-      <p class="intro__text intro__text_size_normal">
+      <p class="intro__statistics-text">
         <b class="intro__text-bold">Природных заповедников</b> 105
       </p>
       
-      <p class="intro__text intro__text_size_normal">
+      <p class="intro__statistics-text">
         <b class="intro__text-bold">Аэропортов</b> 241
       </p>
+      <!-- Надо исправить: по всей секции intro не стоит дублировать для разных тегов класс intro__text
+        Используйте уникальные именования именно элементов блока intro по схеме block__element
+        Удалите модификаторы intro__text_size_normal intro__text_size_big
+
+        Лекция про БЭМ:
+    https://yadi.sk/d/QDEP1A8pX7SykA/05_%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%20%D0%BF%D1%80%D0%BE%20%D0%91%D0%AD%D0%9C.mp4 -->
+
+    <!-- + -->
     </section>
 
     <section class="photo-grid">
@@ -74,6 +104,9 @@
       <img src="images/photo-grid__item-10.jpg" alt="Фото природы" class="photo-grid__item">
       <img src="images/photo-grid__item-11.jpg" alt="Фото природы" class="photo-grid__item">
       <img src="images/photo-grid__item-12.jpg" alt="Фото природы" class="photo-grid__item">
+      <!-- Отлично! правильно оформлен блок с изображениями! у изображений есть src, alt и класс -->
+
+      <!-- + -->
     </section>
 
     
@@ -82,12 +115,20 @@
         <h2 class="place__title">Куршская коса</h2>
           
         <div class="place__section place__section_align_bottom place__section_hidden-on-mobile">
-          <p class="place__url-heading">URL</p>
-          <a href="http://park-kosa.ru/" class="place__url link">park-kosa.ru</a>
+          <p class="place__url-heading">url</p>
+          <!-- Можно лучше: вместо капса лучше использовать text-transform: uppercase -->
+
+          <!-- + -->
+          <a href="http://park-kosa.ru/" class="place__url link" target="_blank">park-kosa.ru</a>
+          <!-- Можно лучше: для внешних ссылок можно добавить атрибут target="_blank" -->
+
+          <!-- + -->
         </div>
 
-        <img src="images/places__image-1.png" alt="Фото природы" class="place__image">
+        <img src="images/place__image-1.jpg" alt="Фото природы" class="place__image">
+        <!-- Можно лучше: замените на формат Jpg. Для изображений без прозрачного фона больше подходит формат jpg, так как он лучше сжимается и меньше весит, что положительно влияет на время загрузки страницы -->
 
+        <!-- + -->
         <div class="place__section">
           <p class="place__paragraph">Здесь, посреди лесов и песчаных дюн, вы сможете увидеть два водных горизонта — спокойного Куршского залива с одной стороны и подёрнутого рябью волн Балтийского моря с другой. Уникальная природная зона на краю российского анклава.</p>
           <p class="place__paragraph">На этом Калининградская область не заканчивается. Для путешественника и исследователя там же по соседству — самая западная точка России, Балтийская коса, — и немецкое наследие россыпи небольших приморских городов. Атмосфера здешних мест исключает суету, окуная в спокойствие природы и запах стального, прохладного моря.</p>
@@ -98,11 +139,11 @@
         <h2 class="place__title">Кольский</h2>
           
         <div class="place__section place__section_align_bottom place__section_hidden-on-mobile">
-          <p class="place__url-heading">URL</p>
-          <a href="https://nat-geo.ru/" class="place__url link">National Geographic</a>
+          <p class="place__url-heading">url</p>
+          <a href="https://nat-geo.ru/" class="place__url link" target="_blank">National Geographic</a>
         </div>
 
-        <img src="images/places__image-2.png" alt="Фото природы" class="place__image">
+        <img src="images/place__image-2.jpg" alt="Фото природы" class="place__image">
 
         <div class="place__section">
           <p class="place__paragraph">Почти весь полуостров находится за Полярным кругом. Саамская тундра, от которой на юг — тайга, а на север — Ледовитый океан, прикидывающийся Баренцевым морем.</p>
@@ -114,11 +155,11 @@
         <h2 class="place__title">Алтай</h2>
           
         <div class="place__section place__section_align_bottom place__section_hidden-on-mobile">
-          <p class="place__url-heading">URL</p>
-          <a href="https://www.facebook.com/vera.bashmakova/posts/10156011613718822" class="place__url link">Facebook</a>
+          <p class="place__url-heading">url</p>
+          <a href="https://www.facebook.com/vera.bashmakova/posts/10156011613718822" class="place__url link" target="_blank">Facebook</a>
         </div>
 
-        <img src="images/places__image-3.png" alt="Фото природы" class="place__image">
+        <img src="images/place__image-3.jpg" alt="Фото природы" class="place__image">
 
         <div class="place__section">
           <p class="place__paragraph">Алтай — одно из красивейших мест в России. В первую очередь из-за гор: если ехать вдоль хребта, вы увидите склоны, усыпанные соснами, горные реки и озёра. А если вы откроете в автомобиле окна, сможете познакомиться с невидимым чудом здешних мест — горным воздухом.</p>
@@ -130,11 +171,11 @@
         <h2 class="place__title">Зимний Байкал</h2>
           
         <div class="place__section place__section_align_bottom place__section_hidden-on-mobile">
-          <p class="place__url-heading">URL</p>
-          <a href="https://vk.com/baikalmile" class="place__url link">https://vk.com/baikalmile</a>
+          <p class="place__url-heading">url</p>
+          <a href="https://vk.com/baikalmile" class="place__url link" target="_blank">https://vk.com/baikalmile</a>
         </div>
 
-        <img src="images/places__image-4.png" alt="Фото природы" class="place__image">
+        <img src="images/place__image-4.jpg" alt="Фото природы" class="place__image">
 
         <div class="place__section">
           <p class="place__paragraph">Всем известен Байкал как крупнейшее озеро в мире. Многие также знают, что это самый большой источник пресной воды и одно из красивейших мест в России.</p>
@@ -146,11 +187,11 @@
         <h2 class="place__title">Карелия</h2>
           
         <div class="place__section place__section_align_bottom place__section_hidden-on-mobile">
-          <p class="place__url-heading">URL</p>
-          <a href="http://vodlozero.ru/" class="place__url link">http://vodlozero.ru/</a>
+          <p class="place__url-heading">url</p>
+          <a href="http://vodlozero.ru/" class="place__url link" target="_blank">http://vodlozero.ru/</a>
         </div>
 
-        <img src="images/places__image-5.png" alt="Фото природы" class="place__image">
+        <img src="images/place__image-5.jpg" alt="Фото природы" class="place__image">
 
         <div class="place__section">
           <p class="place__paragraph">Сибирь заканчивается не на Урале, а в Карелии: образующая тайгу сибирская лиственница не растёт западнее Водлозера. Зато здесь она вымахивает на 30 метров — леса карельских национальных парков из-за непроходимых болот никогда не знали топора. Некоторым соснам уже больше чем полтысячелетия. Прикоснитесь к живому существу, видевшему солнце раньше, чем увидал его Иван Грозный. В девственном лесу на сотню километров не встретишь тропы. А на редких тропинках деревья в паре метров от земли помечены медвежьими когтями. Чтобы все знали, кто тут хозяин.</p>
@@ -164,7 +205,10 @@
       <p class="content-subtitle video__main-subtitle">Видео от студии Stereotactic о местах в России, где ведутся фундаментальные исследования</p>
 
       <div class="video__container">
-        <a class="video__item video__item_type_kamchatka" href="https://vimeo.com/81106671">
+        <a class="video__item video__item_type_kamchatka" href="https://vimeo.com/81106671" target="_blank">
+          <!-- Отлично! Фоновое изображение вставлено с помощью css и модификатора -->
+
+          <!-- + -->
           <img src="images/video__icon_play.svg" alt="Иконка воспроизведения видео" class="video__icon-play">
           
           <div class="video__heading">
@@ -176,7 +220,7 @@
           </div>
         </a>
 
-        <a class="video__item video__item_type_observatory" href="https://vimeo.com/290675450">
+        <a class="video__item video__item_type_observatory" href="https://vimeo.com/290675450" target="_blank">
           <img src="images/video__icon_play.svg" alt="Иконка воспроизведения видео" class="video__icon-play">
           
           <div class="video__heading">
@@ -197,15 +241,19 @@
 
       <div class="comments__container">
         <div class="comment">
-          <img src="images/comment__image-3.png" alt="Аватар автора" class="comment__image">
+          <img src="images/comment__image-1.jpg" alt="Аватар автора" class="comment__image">
+          <!-- Можно лучше: используйте формат jpg и реализуйте округление через css -->
 
+          <!-- + -->
           <blockquote class="comment__quote">«Если вам кажется, что в России ничего не происходит, то просто выгляньте “наружу”…»</blockquote>
+          <!-- Отлично! Для цитаты использован семантический тег blockquote -->
 
+          <!-- + -->
           <cite class="comment__author">Виктор Лягушкин</cite>
         </div>
 
         <div class="comment">
-          <img src="images/comment__image-2.png" alt="Аватар автора" class="comment__image">
+          <img src="images/comment__image-2.jpg" alt="Аватар автора" class="comment__image">
 
           <blockquote class="comment__quote">«Если в город едут туристы — неважно за чем они туда едут: за шамбалой или фрески Рублева искать, или на родину Тарковского — туристы обеспечивают любой город молодёжью, рабочими местами и в конечном счёте наполняют его жизнью.»</blockquote>
 
@@ -213,7 +261,7 @@
         </div>
 
         <div class="comment">
-          <img src="images/comment__image-1.png" alt="Аватар автора" class="comment__image">
+          <img src="images/comment__image-3.jpg" alt="Аватар автора" class="comment__image">
 
           <blockquote class="comment__quote">«Ты приезжаешь, и люди рассказывают тебе, как им плохо. А когда ты покажешь, как им плохо, то ты сволочь и всё очернил.»</blockquote>
 
@@ -223,8 +271,10 @@
     </section>
 
     <section class="cover">
-      <a href="https://stampsy.com/na-elektrichkakh-do-baikala" class="cover__link">
-        <img src="images/cover-Image.jpg" alt="Фото железная дорога" class="cover__image">
+      <a href="https://stampsy.com/na-elektrichkakh-do-baikala" class="cover__link cover__link_background" target="_blank">
+        <!-- Можно лучше: задайте фоновое изображение с помощью модификатора у родительского блока и background-image css -->
+
+        <!-- + -->
         <h2 class="cover__title">До Байкала «на собаках»</h2>
         <p class="cover__subtitle">По мотивам учебной темы о Транссибе и iframes — путешествие от столицы до Байкала на электричках.</p>
       </a>
@@ -232,26 +282,104 @@
   </main>
 
   <footer class="footer">
-    <ul class="footer__items">
-      <li class="footer__item">
-        <a href="https://yandex.ru/maps/" class="footer__link link">Карты</a>
-      </li>
-      <li class="footer__item">
-        <a href="https://yandex.ru/pogoda/" class="footer__link link">Погода</a>
-      </li>
-      <li class="footer__item">
-        <a href="https://rasp.yandex.ru/" class="footer__link link">Расписание</a>
-      </li>
-      <li class="footer__item">
-        <a href="https://calendar.yandex.ru/" class="footer__link link">Календарь</a>
-      </li>
-      <li class="footer__item">
-        <a href="https://travel.yandex.ru" class="footer__link link">Путешествия</a>
-      </li>
-    </ul>
+    <nav class="footer__navigation">
+      <ul class="footer__items">
+        <li class="footer__item">
+          <a href="https://yandex.ru/maps/" class="footer__link link" target="_blank">Карты</a>
+        </li>
+        <li class="footer__item">
+          <a href="https://yandex.ru/pogoda/" class="footer__link link" target="_blank">Погода</a>
+        </li>
+        <li class="footer__item">
+          <a href="https://rasp.yandex.ru/" class="footer__link link" target="_blank">Расписание</a>
+        </li>
+        <li class="footer__item">
+          <a href="https://calendar.yandex.ru/" class="footer__link link" target="_blank">Календарь</a>
+        </li>
+        <li class="footer__item">
+          <a href="https://travel.yandex.ru" class="footer__link link" target="_blank">Путешествия</a>
+        </li>
+      </ul>
+    </nav>
+  <!-- Надо исправить: по смыслу эти ссылки - навигация. Оберните их в список <nav>. используйте список nav > ul > li > a -->
 
+  <!-- + -->
     <small class="footer__copyright">&copy; 2020. Евгений Осипенков</small>
+    <!-- Отлично! Для копирайта вы используете html мнемоники -->
+    
+    <!-- + -->
   </footer>
 </body>
 
 </html>
+
+
+
+
+<!-- В целом по работе: 
+
+      Отлично! Понравилось в работе:
+
+        - Файловая система и классы по БЭМ
+        - Страница валидна
+        - Использованы семантические теги и списки
+        - Для подзаголовков использованы параграфы
+        - Для переиспользования в проекте есть блоки
+        - Размечены все макеты
+        - Нет горизонтальных скроллов
+        - На большом экране контент центрируется
+        - Все брейкпоинты внешне соответствуют макетам
+        - Учтены изменения шрифтов и размров блоков
+        - Аккуратное выравнивание блоков на странице
+
+    Надо исправить:
+
+Наша команда приносит извинения, при проверке работы на предыдущем спринте были пропущены ошибки.
+
+Коментарии "Надо исправить" в разметке необходимо внести, т.к в дальнейшем вы можете столкнуться с проблемами при выполнении заданий и сдачи проектных и дипломной работы.
+
+    - комментарии в разметке
+
+    на 1024:
+    - высота .video__item и .cover не соответствует макету +
+
+    на 768:
+    - высота .cover не соответствует макету +
+
+    - в навигации в footer на мобильных макетах (320 и 375) поправьте расстояние между ссылками. 
+    бразер и Figma по-разному считают вертикальное расстояние между текстовыми элементами, поэтому проста цифра из макета не совпадает
+    наложите макет на страницу и сверьте расстояние +
+
+    на 375
+    - отступ между .photo-grid__item должен быть 16px +
+
+    на 320
+    - отступ между .photo-grid__item должен быть 8px +
+    
+
+
+    Можно улучшить:
+
+    - Комментарии в разметке +
+
+    - для страницы min-width: 320px; +
+
+  Пожалуйста, не удаляйте комментарии
+Исправленные комментарии помечайте +
+
+Для получения зачета исправьте комментарии "Надо исправить"
+
+Полезные материалы:
+
+Масштабируемые шрифты
+- https://codepen.io/Maks113/pen/dgWpxE
+- https://codepen.io/CrocoDillon/pen/fBJxu
+- https://codepen.io/TrevorJTClarke/pen/GoJYOo
+- https://codepen.io/podolskiis/pen/erxmKW
+
+Плотность пикселей
+- https://vc.ru/design/19864-pixels-in-mobile-design
+
+Что должен знать фронтенд-разработчик
+- https://habr.com/ru/company/netologyru/blog/327294/
+-->

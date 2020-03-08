@@ -40,6 +40,13 @@
   opacity: .8;
 }
 
+@media (max-width: 1024px) {
+  .video__item:before {
+    padding-bottom: 63.3%;
+  }
+} 
+
+
 @media (max-width: 767px) {
   .video__item {
     margin-top: 8px;

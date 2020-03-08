@@ -1,0 +1,18 @@
+@import url('./_size/intro__text_size_small.css');
+@import url('./_size/intro__text_size_normal.css');
+@import url('./_size/intro__text_size_big.css');
+
+.intro__main-text {
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media (max-width: 425px) {
+  .intro__main-text {
+    font-size: 16px;
+    line-height: 27px;
+  }
+}
