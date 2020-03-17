@@ -1,0 +1,21 @@
+@import url('__column/benefits__column.css');
+@import url('__content/benefits__content.css');
+@import url('__icon/benefits__icon.css');
+@import url('__image/benefits__image.css');
+@import url('__perk/benefits__perk.css');
+@import url('__perks/benefits__perks.css');
+@import url('__text/benefits__text.css');
+@import url('__title/benefits__title.css');
+@import url('__paragraph/benefits__paragraph.css');
+@import url('__perk-description/benefits__perk-description.css');
+
+.benefits {
+  padding: 0 4.6875vw;
+  padding-top: 11.250vw;
+}
+
+@media (min-width: 1440px) {
+  .benefits {
+    padding-top: 162px;
+  }
+} 

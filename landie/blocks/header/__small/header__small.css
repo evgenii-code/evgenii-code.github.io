@@ -1,0 +1,10 @@
+.header__small {
+  position: relative;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .header__small {
+    display: none;
+  }
+}

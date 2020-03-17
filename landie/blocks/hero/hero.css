@@ -1,0 +1,57 @@
+@import url('__container/hero__container.css');
+@import url('__buttons/hero__buttons.css');
+@import url('__button/hero__button.css');
+@import url('__content/hero__content.css');
+@import url('__heading/hero__heading.css');
+@import url('__paragraph/hero__paragraph.css');
+
+.hero {
+  position: relative;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    position: relative;
+    margin-top: -50px;
+  }
+
+  .hero::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    content: '';
+    background-image: url(../../images/hero_designer.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+
+    background-position: left calc(35vw) center;
+    background-size: contain;
+    opacity: calc((100vw - 768px) / 100);
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    position: relative;
+    margin-top: -50px;
+  }
+
+  .hero::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    content: '';
+    background-image: url(../../images/hero_designer.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+    background-position: left calc(50vw - 220px) center;
+    background-size: contain;
+  }
+}

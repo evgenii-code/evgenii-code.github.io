@@ -1,0 +1,7 @@
+.benefits__icon {
+  background-image: url('../../../images/benefits__icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 36px;
+}

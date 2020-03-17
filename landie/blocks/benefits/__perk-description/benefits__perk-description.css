@@ -1,0 +1,11 @@
+.benefits__perk-description {
+  margin-left: 20px;
+  width: 80%;
+}
+
+@media (min-width: 425px) {
+  .benefits__perk-description {
+    margin-left: 0;
+    width: unset;
+  }
+}

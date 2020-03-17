@@ -1,0 +1,10 @@
+.header__button {
+  align-self: center;
+  order: 3;
+}
+
+@media (min-width: 768px) {
+  .header__button {
+    justify-self: end;  
+  }
+}

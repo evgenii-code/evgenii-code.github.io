@@ -1,0 +1,9 @@
+.hero__buttons {
+  margin-top: 8.984vw;
+}
+
+@media (min-width: 768px) {
+  .hero__buttons {
+    margin-top: 69px;
+  }
+}

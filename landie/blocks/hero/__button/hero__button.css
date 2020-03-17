@@ -1,0 +1,15 @@
+.hero__button {
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+.hero__button:last-of-type {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .hero__button {
+    margin-bottom: 0;
+  }
+}

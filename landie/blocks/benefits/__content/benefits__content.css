@@ -1,0 +1,16 @@
+.benefits__content {
+  max-width: 1110px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .benefits__content {
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-start;
+  }
+}

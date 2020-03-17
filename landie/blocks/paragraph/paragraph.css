@@ -1,0 +1,11 @@
+@import url('__text/paragraph__text.css');
+@import url('__text/_size/paragraph__text_size_big.css');
+@import url('__text/_size/paragraph__text_size_normal.css');
+
+.paragraph {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  color: #6F7CB2;
+}

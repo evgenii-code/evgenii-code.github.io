@@ -1,0 +1,9 @@
+@import url('_type/button_type_main.css');
+@import url('_type/button_type_secondary.css');
+@import url('_size/button_size_big.css');
+@import url('_size/button_size_medium.css');
+@import url('_size/button_size_small.css');
+
+.button {
+  cursor: pointer;
+}

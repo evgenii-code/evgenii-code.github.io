@@ -1,0 +1,9 @@
+.card__heading {
+  margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+  .card__heading {
+    margin-top: 0;
+  }
+}

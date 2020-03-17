@@ -1,0 +1,10 @@
+.footer__social-links {
+  justify-self: end;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 425px) {
+  .footer__social-links {
+    margin-bottom: 0;
+  }
+}

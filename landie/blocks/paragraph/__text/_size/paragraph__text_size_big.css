@@ -1,0 +1,13 @@
+.paragraph__text_size_big {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .paragraph__text_size_big {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}

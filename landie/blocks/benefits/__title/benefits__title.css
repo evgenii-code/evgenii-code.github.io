@@ -1,0 +1,15 @@
+.benefits__title {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: #091133;
+}
+
+@media (min-width: 425px) {
+  .benefits__title {
+    margin-top: 14px;
+  }
+}

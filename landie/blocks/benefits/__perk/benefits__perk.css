@@ -1,0 +1,19 @@
+.benefits__perk {
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.benefits__perk:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (min-width: 425px) {
+  .benefits__perk {
+    display: block;
+    margin-right: 30px;
+  }
+
+  .benefits__perk:last-of-type {
+    margin-right: 0;
+  }
+}

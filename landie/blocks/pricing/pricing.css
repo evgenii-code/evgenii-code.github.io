@@ -1,0 +1,49 @@
+@import url('__container/pricing__container.css');
+@import url('__content/pricing__content.css');
+@import url('__text/pricing__text.css');
+@import url('__amount/pricing__amount.css');
+@import url('__product/pricing__product.css');
+@import url('__tagline/pricing__tagline.css');
+@import url('__button/pricing__button.css');
+
+.pricing {
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing::before {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  left: 0;
+  bottom: -26.181vw;
+  content: '';
+  background-image: url(../../images/pricing__rectangle.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.pricing::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: '';
+  background-image: url(../../images/pricing__path.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: -1;
+}
+
+@media (min-width: 1440px) {
+  .pricing::before {
+    bottom: -377px;
+  }
+
+  .pricing::after {
+    background-size: unset;
+  }
+}

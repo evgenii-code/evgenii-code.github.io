@@ -1,0 +1,20 @@
+.header__content {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+}
+
+@media (min-width: 768px) {
+  .header__content {
+    min-height: unset;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

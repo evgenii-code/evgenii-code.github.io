@@ -1,0 +1,7 @@
+.footer__social-item {
+  margin-right: 30px;
+}
+
+.footer__social-item:last-of-type {
+  margin-right: 0;
+}

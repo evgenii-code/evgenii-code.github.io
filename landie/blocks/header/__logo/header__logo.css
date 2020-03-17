@@ -1,0 +1,19 @@
+.header__logo {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px) {
+  .header__logo {
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+
+    align-self: center;
+    order: 1;
+  }
+}

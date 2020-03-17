@@ -1,0 +1,9 @@
+.button_size_medium {
+  min-height: 26px;
+  max-width: 160px;
+  width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}

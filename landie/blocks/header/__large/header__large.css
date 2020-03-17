@@ -1,0 +1,9 @@
+.header__large {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__large {
+    display: block;
+  }
+}

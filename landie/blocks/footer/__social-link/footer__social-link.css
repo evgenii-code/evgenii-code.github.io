@@ -1,0 +1,14 @@
+@import url('_type/footer__social-link_type_facebook.css');
+@import url('_type/footer__social-link_type_instagram.css');
+@import url('_type/footer__social-link_type_linkedin.css');
+@import url('_type/footer__social-link_type_twitter.css');
+@import url('_type/footer__social-link_type_youtube.css');
+
+
+.footer__social-link {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+}

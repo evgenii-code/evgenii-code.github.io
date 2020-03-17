@@ -1,0 +1,16 @@
+@import url('__bottom/footer__bottom.css');
+@import url('__copyright/footer__copyright.css');
+@import url('__social-item/footer__social-item.css');
+@import url('__social-items/footer__social-items.css');
+@import url('__social-link/footer__social-link.css');
+@import url('__social-links/footer__social-links.css');
+@import url('__top/footer__top.css');
+@import url('__button/footer__button.css');
+@import url('__navigation/footer__navigation.css');
+
+.footer {
+  background: #E7ECFF;
+  width: 100%;
+  padding: 0 4.6875vw;
+  box-sizing: border-box;
+}

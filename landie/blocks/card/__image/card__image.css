@@ -1,0 +1,13 @@
+.card__image {
+  width: 100%;
+  max-width: 540px;
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+  .card__image {
+    max-width: calc(100% / 2);
+    align-self: start;
+    margin-right: 30px;
+  }
+}

@@ -1,0 +1,12 @@
+.benefits__column {
+  width: 100%;
+  order: 1;
+  margin-top: 80px;
+}
+
+@media (min-width: 768px) {
+  .benefits__column {
+    margin-top: 0;
+    max-width: 540px;
+  }
+}

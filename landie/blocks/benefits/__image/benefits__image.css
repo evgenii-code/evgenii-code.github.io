@@ -1,0 +1,13 @@
+.benefits__image {
+  width: 100%;
+  max-width: 540px;
+  order: 2;
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+  .benefits__image {
+    max-width: calc(100% / 2);
+    align-self: start;
+  }
+}

@@ -1,0 +1,20 @@
+.hero__container {
+  position: relative;
+  padding: 0 4.6875vw;
+  padding-bottom: 30px;
+  padding-top: 21.042vw;
+}
+
+@media (min-width: 768px) {
+  .hero__container {
+    /* padding-top: 21.042vw; */
+    padding-bottom: 26.667vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero__container {
+    padding-top: 303px;
+    padding-bottom: 384px;
+  }
+}

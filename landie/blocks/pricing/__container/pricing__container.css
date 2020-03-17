@@ -1,0 +1,12 @@
+.pricing__container {
+  padding: 0 4.6875vw;
+  padding-top: 16.111vw;
+  padding-bottom: 17.917vw;
+}
+
+@media (min-width: 1440px) {
+  .pricing__container {
+    padding-top: 232px;
+    padding-bottom: 258px;
+  }
+}
