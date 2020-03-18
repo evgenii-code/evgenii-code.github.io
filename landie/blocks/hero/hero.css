@@ -23,35 +23,26 @@
     left: 0;
     bottom: 0;
     content: '';
-    background-image: url(../../images/hero_designer.svg);
+    background-image: url(../../images/hero_designer.png);
     background-repeat: no-repeat;
-    background-size: contain;
     z-index: -1;
 
     background-position: left calc(35vw) center;
     background-size: contain;
-    opacity: calc((100vw - 768px) / 100);
+
+    opacity: 0.3;
   }
 }
 
-@media (min-width: 1440px) {
-  .hero {
-    position: relative;
-    margin-top: -50px;
-  }
-
+@media (min-width: 960px) {
   .hero::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    content: '';
-    background-image: url(../../images/hero_designer.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: -1;
+    opacity: 1;
+  }
+}
+
+
+@media (min-width: 1440px) {
+  .hero::before {
     background-position: left calc(50vw - 220px) center;
-    background-size: contain;
   }
 }

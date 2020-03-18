@@ -1,71 +1,17 @@
+@import url('__checkbox-custom/hamburger__checkbox-custom.css');
+@import url('__checkbox-original/hamburger__checkbox-original.css');
+@import url('__item/hamburger__item.css');
+@import url('__link/hamburger__link.css');
+@import url('__link/_text-type/hamburger__link_text-type_bold.css');
+@import url('__menu/hamburger__menu.css');
+
 .hamburger {
   position: relative;
-}
-
-.hamburger__checkbox-original {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 38px;
-  height: 38px;
-  z-index: 3;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.hamburger__checkbox-custom {
-  width: 38px;
-  height: 38px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hamburger__checkbox-custom::before {
-  position: absolute;
-  content: '≡';
-  font-size: 40px;
-  color: #6F7CB2;
 }
 
 .hamburger__checkbox-original:checked ~ .hamburger__checkbox-custom::before {
   content: '+';
   transform: rotate(45deg);
-}
-
-.hamburger__menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0;
-  margin: 0;
-  margin-top: 60px;
-  transform: translate(0, -200%);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), 
-              opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  z-index: 2;
-  opacity: 0;
-
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.hamburger__item {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.hamburger__link {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: #505F98;
-  text-decoration: none;
-  white-space: nowrap;
 }
 
 .hamburger__checkbox-original:checked ~ .hamburger__menu {

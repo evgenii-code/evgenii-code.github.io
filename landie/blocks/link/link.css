@@ -1,7 +1,8 @@
 .link {
   text-decoration: none;
+  transition: border-bottom .1s ease;
 }
 
 .link:hover {
-  text-decoration: underline;
+  border-bottom: 4px solid;
 }

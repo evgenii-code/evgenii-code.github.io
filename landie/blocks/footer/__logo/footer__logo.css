@@ -1,0 +1,9 @@
+.footer__logo {
+  margin-top: 30px;
+}
+
+@media (min-width: 425px) {
+  .footer__logo {
+    margin-top: 0;
+  }
+}

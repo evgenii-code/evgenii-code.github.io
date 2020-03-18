@@ -5,5 +5,35 @@
 @import url('_size/button_size_small.css');
 
 .button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 2px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
+  z-index: 3;
+  transition: transform .05s ease;
+}
+
+.button:active {
+  transform: scale(1.05);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewX(-45deg) translate(-110%, 0);
+}
+
+.button:hover::before {
+  transition: transform .7s ease;
+  transform: skewX(-45deg) translate(210%, 0);
 }

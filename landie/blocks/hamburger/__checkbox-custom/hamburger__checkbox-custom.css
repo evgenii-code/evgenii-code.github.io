@@ -1,0 +1,15 @@
+.hamburger__checkbox-custom {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hamburger__checkbox-custom::before {
+  position: absolute;
+  content: '≡';
+  font-size: 40px;
+  color: #101b47;
+}

@@ -1,0 +1,10 @@
+.hamburger__checkbox-original {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  z-index: 3;
+  opacity: 0;
+  cursor: pointer;
+}

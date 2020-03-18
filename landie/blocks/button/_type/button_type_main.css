@@ -1,12 +1,9 @@
 .button_type_main {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 26px;
-  text-align: center;
-  background-color: #111B47;
-  border-radius: 2px;
-  color: #ffffff;
   border: none;
-  box-sizing: border-box;
+  background-color: #111B47;
+  color: #ffffff;
+}
+
+.button_type_main::before {
+  background-color: rgba(255, 255, 255, .5);
 }
