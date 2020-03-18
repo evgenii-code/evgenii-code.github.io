@@ -1,0 +1,11 @@
+.page__main {
+  margin-top: 0;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .page__main {
+    position: relative;
+    margin-top: -50px;
+  }
+}

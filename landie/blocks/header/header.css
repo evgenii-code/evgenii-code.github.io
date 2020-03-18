@@ -12,13 +12,3 @@
   padding-top: 12px;
   box-sizing: border-box;
 }
-
-/* @media (min-width: 768px) {
-  .header {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-  }
-} */

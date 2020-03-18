@@ -1,0 +1,4 @@
+.page__header {
+  position: relative;
+  z-index: 2;  
+}

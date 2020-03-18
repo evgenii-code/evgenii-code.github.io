@@ -1,3 +1,6 @@
+@import url('__header/page__header.css');
+@import url('__main/page__main.css');
+
 .page {
   position: relative;
   box-sizing: border-box;

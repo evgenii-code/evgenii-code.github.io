@@ -7,15 +7,9 @@
 
 .hero {
   position: relative;
-  margin-top: 0;
 }
 
 @media (min-width: 768px) {
-  .hero {
-    position: relative;
-    margin-top: -50px;
-  }
-
   .hero::before {
     position: absolute;
     top: 0;

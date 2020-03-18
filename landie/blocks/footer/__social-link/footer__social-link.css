@@ -11,4 +11,10 @@
   height: 16px;
   background-repeat: no-repeat;
   background-size: 16px 16px;
+  opacity: 1;
+  transition: opacity .2s ease;
+}
+
+.footer__social-link:hover {
+  opacity: .5;
 }
