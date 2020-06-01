@@ -20,12 +20,8 @@ class Api {
     });
   }
 
-  fetchData(attribute, method = 'GET') {
+  fetchData(attribute, init = { headers: this.headers }) {
     const url = this.baseUrl + attribute;
-    const init = { 
-      headers: this.headers,
-      method,
-    };
 
     return fetch(url, init)
       .then(res => {
@@ -36,6 +32,21 @@ class Api {
         return Promise.reject(`Ошибка: ${res.status}`);
       })
       .catch(err => console.log(`${err}`))
+  }
+
+  setUserInfo(attribute, callback, name, about) {
+    const init = {
+      headers: this.headers,
+      'Content-Type': 'application/json',
+      method: 'PATCH',
+      body: JSON.stringify({ name, about })
+    }
+
+    this.fetchData(attribute, init).then((result) => {
+      const { name, about, avatar } = result;
+
+      callback({ name, about, avatar });
+    });
   }
 
   // другие методы работы с API

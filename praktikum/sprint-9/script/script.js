@@ -91,7 +91,6 @@ const cardSelectors = {
   cardRemoveButton: '.place-card__delete-icon',
 }
 
-api.getUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo)) //убрать вниз
 //userInfo.setUserInfo('Jaques Causteau', 'Sailor, Researcher');
 //userInfo.updateUserInfo(usernameElem, jobElem);
 //userInfo.updateUserInfo();
@@ -107,8 +106,6 @@ const iterateCards = function(initialCards) {
   cardList = new CardList({ placesList, cards });
   cardList.render();
 }
-
-api.getInitialCards('/cards', iterateCards);
 
 // initialCards.forEach(cardData => {
 //   const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
@@ -144,17 +141,21 @@ function submitAddCard(event) {
 
 function submitUserInfo(event) {
   event.preventDefault();
+  
   const form = event.target;
 
-  const username = form.elements.username.value;
-  const job = form.elements.job.value;
+  const name = form.elements.username.value;
+  const about = form.elements.job.value;
 
-  userInfo.setUserInfo(username, job)
-  userInfo.updateUserInfo(usernameElem, jobElem);
+  //userInfo.setUserInfo({ name, about })
+  api.setUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo), name, about)
+  //userInfo.updateUserInfo(usernameElem, jobElem);
 
   editPopup.closePopup();
 }
 
+api.getUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo)) //убрать вниз
+api.getInitialCards('/cards', iterateCards);
 addForm.addEventListener('submit', submitAddCard);
 editForm.addEventListener('submit', submitUserInfo);
 

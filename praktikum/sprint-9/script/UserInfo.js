@@ -10,7 +10,7 @@ class UserInfo {
   setUserInfo({ name, about, avatar }) {
     this.username = name;
     this.job = about;
-    this.avatar = avatar;
+    this.avatar = avatar || this.avatar;
 
     this.updateUserInfo();
   }
