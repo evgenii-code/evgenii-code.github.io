@@ -4,7 +4,7 @@ class Card {
   // Можно лучше
   // externalMethod -- поди знай что он делает, я бы конечно его назвал
   // как-то более соответственно его функционалу.
-  constructor({ templateCard, cardData, externalMethod, cardSelectors }) {
+  constructor(templateCard, cardData, externalMethod, cardSelectors) {
     this.name = cardData.name;
     this.link = cardData.link;
     this.templateCard = templateCard;

@@ -8,8 +8,6 @@ const api = new Api({
   },
 });
 
-//const result = api.getUserInfo('/users/me');
-
 const root = document.querySelector('.root');
 
 const usernameElem = root.querySelector('.user-info__username');
@@ -51,6 +49,7 @@ const editFormValidator = new FormValidator(editForm, errorMessages);
 editFormValidator.setEventListeners(popupEditButton);
 
 const cards = [];
+let cardList;
 
 const fillUpPopup = function () {
   const inputs = this.popup.querySelectorAll('.popup__input');
@@ -58,6 +57,7 @@ const fillUpPopup = function () {
   Array.from(inputs).forEach(input => {
     input.value = userInfo[input.name];
   });
+
   editFormValidator.clearErrors();
   editFormValidator.setSubmitButtonState();
 }
@@ -74,9 +74,6 @@ const clearForm = function () {
 }
 
 const getImage = function (value) {
-  // Можно лучше
-  // pictureContainer -- он же не меняется, поэтому его вообще стоит 1 раз получить и пользоваться,
-  // а не искать заново при каждом коллбэке
   const pictureContainer = this.popup.querySelector('.popup__picture');
   pictureContainer.src = value;
 }
@@ -94,19 +91,33 @@ const cardSelectors = {
   cardRemoveButton: '.place-card__delete-icon',
 }
 
-api.getUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo))
+api.getUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo)) //убрать вниз
 //userInfo.setUserInfo('Jaques Causteau', 'Sailor, Researcher');
 //userInfo.updateUserInfo(usernameElem, jobElem);
 //userInfo.updateUserInfo();
 
-initialCards.forEach(cardData => {
-  const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
-  const cardToAppend = newCard.create();
-  cards.push(cardToAppend);
-});
+const iterateCards = function(initialCards) {
+  initialCards.forEach(cardData => {
+    //const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
+    const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors);
+    const cardToAppend = newCard.create();
+    cards.push(cardToAppend);
+  });
 
-const cardList = new CardList({ placesList, cards });
-cardList.render();
+  cardList = new CardList({ placesList, cards });
+  cardList.render();
+}
+
+api.getInitialCards('/cards', iterateCards);
+
+// initialCards.forEach(cardData => {
+//   const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
+//   const cardToAppend = newCard.create();
+//   cards.push(cardToAppend);
+// });
+
+// const cardList = new CardList({ placesList, cards });
+// cardList.render();
 
 function getInputValue(form) {
   const inputs = form.querySelectorAll('.popup__input');
@@ -124,7 +135,7 @@ function submitAddCard(event) {
   event.preventDefault();
 
   const cardData = getInputValue(event.target);
-  const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
+  const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors);
 
   cardList.addCard(newCard.create());
 

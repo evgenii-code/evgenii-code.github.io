@@ -6,19 +6,21 @@ class Api {
     this.headers = options.headers;
   }
 
-  getInitialCards() {
-    // ...
+  getInitialCards(attribute, callback) {
+    this.fetchData(attribute).then((result) => {
+      callback(result);
+    });
   }
 
-  getUserInfo(attribute, callback, method = 'GET') {
-    this.fetchData(attribute, method).then((result) => {
+  getUserInfo(attribute, callback) {
+    this.fetchData(attribute).then((result) => {
       const { name, about, avatar } = result;
 
       callback({ name, about, avatar });
     });
   }
 
-  fetchData(attribute, method) {
+  fetchData(attribute, method = 'GET') {
     const url = this.baseUrl + attribute;
     const init = { 
       headers: this.headers,

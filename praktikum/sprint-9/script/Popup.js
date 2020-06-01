@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 'use strict';
 
 class Popup {
@@ -11,12 +10,6 @@ class Popup {
   }
 
   setEventListeners() {
-    // Можно лучше
-    // проверить пришел ли элемент, и ставить обработчик если пришел
-    // пользователь может и забыть передать что-нибудь
-    // Ведь возможен вариант когда попап будет открываться не по кнопке, а  только по событию
-    // вызовом метода открытия, значит элемент
-    // в конструктор точно не скинут
     this.openButton.addEventListener('click', this.openPopup.bind(this));
     this.closeButton.addEventListener('click', this.closePopup.bind(this));
   }
