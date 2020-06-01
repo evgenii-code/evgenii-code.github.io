@@ -8,16 +8,16 @@ class UserInfo {
   }
 
   setUserInfo({ name, about, avatar }) {
-    this.name = name;
-    this.about = about;
+    this.username = name;
+    this.job = about;
     this.avatar = avatar;
 
     this.updateUserInfo();
   }
 
   updateUserInfo() {
-    this.nameElem.textContent = this.name;
-    this.aboutElem.textContent = this.about;
+    this.nameElem.textContent = this.username;
+    this.aboutElem.textContent = this.job;
     this.avatarElem.style.backgroundImage = `url(${this.avatar}`;
   }
 }
