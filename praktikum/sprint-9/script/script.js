@@ -1,5 +1,16 @@
 'use strict';
 
+const api = new Api({
+  baseUrl: 'https://praktikum.tk/cohort11',
+  headers: {
+    authorization: '5634da00-9646-4a6f-a86d-3ff101e9d022',
+    'Content-Type': 'application/json'
+  },
+});
+
+const result = api.getUserInfo('/users/me');
+//console.log(result);
+
 const root = document.querySelector('.root');
 
 const usernameElem = root.querySelector('.user-info__username');
