@@ -8,15 +8,15 @@ const api = new Api({
   },
 });
 
-const result = api.getUserInfo('/users/me');
-//console.log(result);
+//const result = api.getUserInfo('/users/me');
 
 const root = document.querySelector('.root');
 
 const usernameElem = root.querySelector('.user-info__username');
 const jobElem = root.querySelector('.user-info__job');
+const avatarElem = root.querySelector('.user-info__photo');
 
-const userInfo = new UserInfo(usernameElem, jobElem);
+const userInfo = new UserInfo(usernameElem, jobElem, avatarElem);
 
 const addPopupElem = root.querySelector('#popup-add');
 const addPopupCloseButton = addPopupElem.querySelector('.popup__close');
@@ -94,9 +94,10 @@ const cardSelectors = {
   cardRemoveButton: '.place-card__delete-icon',
 }
 
-userInfo.setUserInfo('Jaques Causteau', 'Sailor, Researcher');
-userInfo.updateUserInfo(usernameElem, jobElem);
-userInfo.updateUserInfo();
+api.getUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo))
+//userInfo.setUserInfo('Jaques Causteau', 'Sailor, Researcher');
+//userInfo.updateUserInfo(usernameElem, jobElem);
+//userInfo.updateUserInfo();
 
 initialCards.forEach(cardData => {
   const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
