@@ -1,18 +1,23 @@
 'use strict';
 
 class UserInfo {
-  constructor(usernameElem, jobElem) {
-    this.usernameElem = usernameElem;
-    this.jobElem = jobElem;
+  constructor(nameElem, aboutElem, avatarElem) {
+    this.nameElem = nameElem;
+    this.aboutElem = aboutElem;
+    this.avatarElem = avatarElem;
   }
 
-  setUserInfo(username, job) {
-    this.username = username;
-    this.job = job;
+  setUserInfo({ name, about, avatar }) {
+    this.name = name;
+    this.about = about;
+    this.avatar = avatar;
+
+    this.updateUserInfo();
   }
 
   updateUserInfo() {
-    this.usernameElem.textContent = this.username;
-    this.jobElem.textContent = this.job;
+    this.nameElem.textContent = this.name;
+    this.aboutElem.textContent = this.about;
+    this.avatarElem.style.backgroundImage = `url(${this.avatar}`;
   }
 }

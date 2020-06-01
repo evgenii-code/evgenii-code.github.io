@@ -10,9 +10,11 @@ class Api {
     // ...
   }
 
-  getUserInfo(attribute, method = 'GET', callback) {
+  getUserInfo(attribute, callback, method = 'GET') {
     this.fetchData(attribute, method).then((result) => {
-      console.log(result);
+      const { name, about, avatar } = result;
+
+      callback({ name, about, avatar });
     });
   }
 
