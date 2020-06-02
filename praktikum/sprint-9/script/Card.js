@@ -32,8 +32,8 @@ class Card {
 
     const cardName = card.querySelector(this.cardSelectors.cardName);
     const likeCount = card.querySelector(this.cardSelectors.cardLikeCount);
-    likeCount.textContent = this.likes.length;
-    
+    likeCount.textContent = this.likes ? this.likes.length : 0;
+
     this.cardBackground = card.querySelector(this.cardSelectors.cardBackground);
 
     cardName.textContent = this.name;
