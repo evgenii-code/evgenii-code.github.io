@@ -88,6 +88,7 @@ const cardSelectors = {
   cardName: '.place-card__name',
   cardBackground: '.place-card__image',
   cardLikeButton: '.place-card__like-icon',
+  cardLikeCount: '.place-card__like-count',
   cardRemoveButton: '.place-card__delete-icon',
 }
 

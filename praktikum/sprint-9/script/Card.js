@@ -7,6 +7,7 @@ class Card {
   constructor(templateCard, cardData, externalMethod, cardSelectors) {
     this.name = cardData.name;
     this.link = cardData.link;
+    this.likes = cardData.likes;
     this.templateCard = templateCard;
     this.externalMethod = externalMethod;
     this.cardSelectors = cardSelectors;
@@ -30,6 +31,9 @@ class Card {
     this.card = card.querySelector(this.cardSelectors.card);
 
     const cardName = card.querySelector(this.cardSelectors.cardName);
+    const likeCount = card.querySelector(this.cardSelectors.cardLikeCount);
+    likeCount.textContent = this.likes.length;
+    
     this.cardBackground = card.querySelector(this.cardSelectors.cardBackground);
 
     cardName.textContent = this.name;
