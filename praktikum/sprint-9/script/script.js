@@ -96,10 +96,11 @@ const cardSelectors = {
 }
 
 const toggleLikeApi = api.toggleLike.bind(api);
+const removeCardApi = api.removeCard.bind(api);
 
 const iterateCards = function(initialCards) {
   initialCards.forEach(cardData => {
-    const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors, toggleLikeApi, userData);
+    const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors, toggleLikeApi, userData, removeCardApi);
     const cardToAppend = newCard.create();
     cards.push(cardToAppend);
   });
@@ -121,7 +122,7 @@ function getInputValue(form) {
 }
 
 const renderNewCard = function(cardData) {
-  const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors, toggleLikeApi, userData);
+  const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors, toggleLikeApi, userData, removeCardApi);
 
   cardList.addCard(newCard.create());
 };

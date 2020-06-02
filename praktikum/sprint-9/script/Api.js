@@ -68,4 +68,15 @@ class Api {
       callback(result);
     });
   }
+
+  removeCard(attribute, callback) {
+    const init = {
+      headers: this.headers,
+      method: 'DELETE',
+    }
+
+    this.fetchData(attribute, init).then((result) => {
+      callback();
+    });
+  }
 }

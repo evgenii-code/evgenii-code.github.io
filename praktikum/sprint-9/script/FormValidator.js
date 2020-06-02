@@ -48,11 +48,6 @@ class FormValidator {
     this.inputs = Array.from(this.form.querySelectorAll('.popup__input'));
 
     this.inputs.forEach(input => {
-      // Можно лучше
-      // Тут лучше бы по селектору выбирать инпуты, потому что мало ли как там верстку у формы поменять могут
-      // Думаю, вам знаком метод когда иинпуту дают id = "my-input", а элементу с ошибкой id = "my-input-error"
-      // Т.е. зная id инпута через шаблонную строку мы id для ошибки получим
-      // Также можно сохранить подстрочники для ошибок в массив и в clearErrors по нему пробегать
       const error = input.nextElementSibling;
 
       input.addEventListener('input', () => this.checkInputValidity({ input, error }));
