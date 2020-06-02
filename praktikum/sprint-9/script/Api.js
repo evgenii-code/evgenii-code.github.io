@@ -49,5 +49,18 @@ class Api {
     });
   }
 
+  setNewCard(attribute, callback, name, link) {
+    const init = {
+      headers: this.headers,
+      'Content-Type': 'application/json',
+      method: 'POST',
+      body: JSON.stringify({ name, link })
+    }
+
+    this.fetchData(attribute, init).then((result) => {
+      callback(result);
+    });
+  }
+
   // другие методы работы с API
 }

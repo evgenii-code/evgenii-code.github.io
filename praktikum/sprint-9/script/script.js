@@ -129,13 +129,18 @@ function getInputValue(form) {
   return result;
 }
 
+const renderNewCard = function(cardData) {
+  const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors);
+
+  cardList.addCard(newCard.create());
+};
+
 function submitAddCard(event) {
   event.preventDefault();
 
   const cardData = getInputValue(event.target);
-  const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors);
 
-  cardList.addCard(newCard.create());
+  api.setNewCard('/cards', renderNewCard, cardData.name, cardData.link)
 
   addPopup.closePopup();
 }
