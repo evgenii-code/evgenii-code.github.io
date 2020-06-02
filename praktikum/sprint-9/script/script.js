@@ -8,13 +8,16 @@ const api = new Api({
   },
 });
 
+const userData = {};
+
 const root = document.querySelector('.root');
 
 const usernameElem = root.querySelector('.user-info__username');
 const jobElem = root.querySelector('.user-info__job');
 const avatarElem = root.querySelector('.user-info__photo');
 
-const userInfo = new UserInfo(usernameElem, jobElem, avatarElem);
+const userInfo = new UserInfo(usernameElem, jobElem, avatarElem, userData);
+const userInfoApi = api.getUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo));
 
 const addPopupElem = root.querySelector('#popup-add');
 const addPopupCloseButton = addPopupElem.querySelector('.popup__close');
@@ -92,14 +95,11 @@ const cardSelectors = {
   cardRemoveButton: '.place-card__delete-icon',
 }
 
-//userInfo.setUserInfo('Jaques Causteau', 'Sailor, Researcher');
-//userInfo.updateUserInfo(usernameElem, jobElem);
-//userInfo.updateUserInfo();
+const toggleLikeApi = api.toggleLike.bind(api);
 
 const iterateCards = function(initialCards) {
   initialCards.forEach(cardData => {
-    //const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
-    const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors);
+    const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors, toggleLikeApi, userData);
     const cardToAppend = newCard.create();
     cards.push(cardToAppend);
   });
@@ -107,15 +107,6 @@ const iterateCards = function(initialCards) {
   cardList = new CardList({ placesList, cards });
   cardList.render();
 }
-
-// initialCards.forEach(cardData => {
-//   const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
-//   const cardToAppend = newCard.create();
-//   cards.push(cardToAppend);
-// });
-
-// const cardList = new CardList({ placesList, cards });
-// cardList.render();
 
 function getInputValue(form) {
   const inputs = form.querySelectorAll('.popup__input');
@@ -130,7 +121,7 @@ function getInputValue(form) {
 }
 
 const renderNewCard = function(cardData) {
-  const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors);
+  const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors, toggleLikeApi, userData);
 
   cardList.addCard(newCard.create());
 };
@@ -153,29 +144,11 @@ function submitUserInfo(event) {
   const name = form.elements.username.value;
   const about = form.elements.job.value;
 
-  //userInfo.setUserInfo({ name, about })
   api.setUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo), name, about)
-  //userInfo.updateUserInfo(usernameElem, jobElem);
 
   editPopup.closePopup();
 }
 
-api.getUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo)) //убрать вниз
 api.getInitialCards('/cards', iterateCards);
 addForm.addEventListener('submit', submitAddCard);
 editForm.addEventListener('submit', submitUserInfo);
-
-// Добрый день!
-
-// Хорошая, и, главное, хорошо читаемая и лаконичная работа.
-// Работать с вами было большим удовольствием.
-
-// ## Итог
-// - Использованы ES6-классы.
-// - В классах напрямую не создаются экземпляры других классов.
-// - Каждый класс выполняет строго одну задачу. Всё, что относится к решению этой задачи, находится в классе.
-// - Делегирование больше не используется. Обработчики добавлены именно тем элементам, события которых нужно отслеживать.
-// - Ненужные обработчики удаляются.
-// - Каждый класс описан в отдельном JS-файле.
-
-// Работа принята, успехов в учебе!

@@ -1,16 +1,19 @@
 'use strict';
 
 class UserInfo {
-  constructor(nameElem, aboutElem, avatarElem) {
+  constructor(nameElem, aboutElem, avatarElem, userData) {
     this.nameElem = nameElem;
     this.aboutElem = aboutElem;
     this.avatarElem = avatarElem;
+    this.userData = userData;
   }
 
-  setUserInfo({ name, about, avatar }) {
-    this.username = name;
-    this.job = about;
-    this.avatar = avatar || this.avatar;
+  setUserInfo(result) {
+    this.username = result.name;
+    this.job = result.about;
+    this.avatar = result.avatar || this.avatar;
+
+    Object.assign(this.userData, result);
 
     this.updateUserInfo();
   }
