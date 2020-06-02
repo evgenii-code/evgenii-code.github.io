@@ -6,20 +6,6 @@ class Api {
     this.headers = options.headers;
   }
 
-  getInitialCards(attribute, callback) {
-    this.fetchData(attribute).then((result) => {
-      callback(result);
-    });
-  }
-
-  getUserInfo(attribute, callback) {
-    this.fetchData(attribute).then((result) => {
-      const { name, about, avatar } = result;
-
-      callback({ name, about, avatar });
-    });
-  }
-
   fetchData(attribute, init = { headers: this.headers }) {
     const url = this.baseUrl + attribute;
 
@@ -34,6 +20,18 @@ class Api {
       .catch(err => console.log(`${err}`))
   }
 
+  getInitialCards(attribute, callback) {
+    this.fetchData(attribute).then((result) => {
+      callback(result);
+    });
+  }
+
+  getUserInfo(attribute, callback) {
+    this.fetchData(attribute).then((result) => {
+      callback(result);
+    });
+  }
+
   setUserInfo(attribute, callback, name, about) {
     const init = {
       headers: this.headers,
@@ -43,9 +41,7 @@ class Api {
     }
 
     this.fetchData(attribute, init).then((result) => {
-      const { name, about, avatar } = result;
-
-      callback({ name, about, avatar });
+      callback(result);
     });
   }
 
@@ -62,5 +58,14 @@ class Api {
     });
   }
 
-  // другие методы работы с API
+  toggleLike(attribute, callback, isLiked = true) {
+    const init = {
+      headers: this.headers,
+      method: isLiked ? 'PUT' : 'DELETE',
+    }
+
+    this.fetchData(attribute, init).then((result) => {
+      callback(result);
+    });
+  }
 }

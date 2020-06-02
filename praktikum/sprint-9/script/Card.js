@@ -1,20 +1,28 @@
 'use strict';
 
 class Card {
-  // Можно лучше
-  // externalMethod -- поди знай что он делает, я бы конечно его назвал
-  // как-то более соответственно его функционалу.
-  constructor(templateCard, cardData, externalMethod, cardSelectors) {
+  constructor(templateCard, cardData, showPopupMethod, cardSelectors, toggleLikeApi, userInfo) {
     this.name = cardData.name;
     this.link = cardData.link;
     this.likes = cardData.likes;
     this.templateCard = templateCard;
-    this.externalMethod = externalMethod;
+    this.showPopupMethod = showPopupMethod;
     this.cardSelectors = cardSelectors;
+    this.cardId = cardData._id;
+    this.toggleLikeApi = toggleLikeApi;
+    this.userInfo = userInfo;
+    this.cardIsLiked = this.isLiked();
+    this.ownerId = cardData.owner._id;
+  }
+
+  isLiked() {
+    return this.likes.some(like => like._id === this.userInfo._id);
   }
 
   like() {
     this.cardLikeButton.classList.toggle('place-card__like-icon_liked');
+    this.cardIsLiked = !this.cardIsLiked;
+    this.toggleLikeApi(`/cards/like/${this.cardId}`, this.renderLikes.bind(this), this.cardIsLiked);
   }
 
   remove() {
@@ -22,8 +30,12 @@ class Card {
     this.card.remove();
   }
 
+  renderLikes(result) {
+    this.likeCount.textContent = result.likes.length;
+  }
+
   showPopup() {
-    this.externalMethod(this.link);
+    this.showPopupMethod(this.link);
   }
 
   create() {
@@ -31,8 +43,8 @@ class Card {
     this.card = card.querySelector(this.cardSelectors.card);
 
     const cardName = card.querySelector(this.cardSelectors.cardName);
-    const likeCount = card.querySelector(this.cardSelectors.cardLikeCount);
-    likeCount.textContent = this.likes ? this.likes.length : 0;
+    this.likeCount = card.querySelector(this.cardSelectors.cardLikeCount);
+    this.likeCount.textContent = this.likes ? this.likes.length : 0;
 
     this.cardBackground = card.querySelector(this.cardSelectors.cardBackground);
 
@@ -41,7 +53,12 @@ class Card {
     this.cardBackground.dataset.imageLink = this.link;
 
     this.cardLikeButton = this.card.querySelector(this.cardSelectors.cardLikeButton);
+
+    if (this.cardIsLiked) this.cardLikeButton.classList.add('place-card__like-icon_liked');
+
     this.cardRemoveButton = this.card.querySelector(this.cardSelectors.cardRemoveButton);
+    if (this.ownerId !== this.userInfo._id) this.cardRemoveButton.remove();
+
     this.setEventlisteners();
 
     return card;
@@ -53,7 +70,9 @@ class Card {
     this.showPopupBind = this.showPopup.bind(this);
 
     this.cardLikeButton.addEventListener('click', this.likeBind);
-    this.cardRemoveButton.addEventListener('click', this.removeBind);
+
+    if (this.ownerId === this.userInfo._id) this.cardRemoveButton.addEventListener('click', this.removeBind);
+    
     this.cardBackground.addEventListener('click', this.showPopupBind);
   }
 
