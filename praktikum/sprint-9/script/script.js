@@ -98,7 +98,6 @@ const cardSelectors = {
 
 const iterateCards = function(initialCards) {
   initialCards.forEach(cardData => {
-    console.log(cardData)
     //const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
     const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors);
     const cardToAppend = newCard.create();
