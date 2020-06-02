@@ -88,6 +88,7 @@ const cardSelectors = {
   cardName: '.place-card__name',
   cardBackground: '.place-card__image',
   cardLikeButton: '.place-card__like-icon',
+  cardLikeCount: '.place-card__like-count',
   cardRemoveButton: '.place-card__delete-icon',
 }
 
@@ -97,6 +98,7 @@ const cardSelectors = {
 
 const iterateCards = function(initialCards) {
   initialCards.forEach(cardData => {
+    console.log(cardData)
     //const newCard = new Card({ templateCard, cardData, externalMethod, cardSelectors });
     const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors);
     const cardToAppend = newCard.create();
