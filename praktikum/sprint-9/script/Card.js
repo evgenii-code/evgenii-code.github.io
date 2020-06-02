@@ -1,7 +1,7 @@
 'use strict';
 
 class Card {
-  constructor(templateCard, cardData, showPopupMethod, cardSelectors, toggleLikeApi, userInfo) {
+  constructor(templateCard, cardData, showPopupMethod, cardSelectors, toggleLikeApi, userInfo, removeCardApi) {
     this.name = cardData.name;
     this.link = cardData.link;
     this.likes = cardData.likes;
@@ -10,6 +10,7 @@ class Card {
     this.cardSelectors = cardSelectors;
     this.cardId = cardData._id;
     this.toggleLikeApi = toggleLikeApi;
+    this.removeCardApi = removeCardApi;
     this.userInfo = userInfo;
     this.cardIsLiked = this.isLiked();
     this.ownerId = cardData.owner._id;
@@ -25,7 +26,14 @@ class Card {
     this.toggleLikeApi(`/cards/like/${this.cardId}`, this.renderLikes.bind(this), this.cardIsLiked);
   }
 
-  remove() {
+  remove(event) {
+    event.stopPropagation();
+    if (!window.confirm('Вы действительно хотите удалить эту карточку?')) return
+
+    this.removeCardApi(`/cards/${this.cardId}`, this.removeCardFromDOM.bind(this));
+  }
+
+  removeCardFromDOM() {
     this.removeEventListeners();
     this.card.remove();
   }
@@ -72,7 +80,7 @@ class Card {
     this.cardLikeButton.addEventListener('click', this.likeBind);
 
     if (this.ownerId === this.userInfo._id) this.cardRemoveButton.addEventListener('click', this.removeBind);
-    
+
     this.cardBackground.addEventListener('click', this.showPopupBind);
   }
 
