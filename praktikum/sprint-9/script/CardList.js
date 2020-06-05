@@ -1,16 +1,18 @@
 'use strict';
 
 class CardList {
-  constructor({ placesList, cards }) {
+  constructor({ placesList }) {
     this.placesList = placesList;
-    this.cards = cards;
+    // this.cards = cards;
   }
 
   addCard(card) {
     this.placesList.appendChild(card);
   }
 
-  render() {
+  render(cards) {
+    this.cards = cards;
+    
     this.cards.forEach((card) => {
       this.placesList.appendChild(card);
     })

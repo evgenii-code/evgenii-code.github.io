@@ -1,7 +1,7 @@
 'use strict';
 
 class Card {
-  constructor(templateCard, cardData, showPopupMethod, cardSelectors, toggleLikeApi, userInfo, removeCardApi) {
+  constructor(templateCard, cardData, showPopupMethod, cardSelectors, toggleLikeApi, userInfo, removeCardApi, errorHandler) {
     this.name = cardData.name;
     this.link = cardData.link;
     this.likes = cardData.likes;
@@ -14,6 +14,7 @@ class Card {
     this.userInfo = userInfo;
     this.cardIsLiked = this.isLiked();
     this.ownerId = cardData.owner._id;
+    this.errorHandler = errorHandler;
   }
 
   isLiked() {
@@ -21,16 +22,26 @@ class Card {
   }
 
   like() {
-    this.cardLikeButton.classList.toggle('place-card__like-icon_liked');
     this.cardIsLiked = !this.cardIsLiked;
-    this.toggleLikeApi(`/cards/like/${this.cardId}`, this.renderLikes.bind(this), this.cardIsLiked);
+
+    this.toggleLikeApi(`/cards/like/${this.cardId}`, this.cardIsLiked)
+      .then(result => {
+        this.cardLikeButton.classList.toggle('place-card__like-icon_liked');
+
+        this.renderLikes(result);
+      })
+      .catch(err => this.errorHandler(err));
   }
 
   remove(event) {
     event.stopPropagation();
     if (!window.confirm('Вы действительно хотите удалить эту карточку?')) return
 
-    this.removeCardApi(`/cards/${this.cardId}`, this.removeCardFromDOM.bind(this));
+    this.removeCardApi(`/cards/${this.cardId}`)
+      .then(result => {
+        this.removeCardFromDOM(result);
+      })
+      .catch(err => this.errorHandler(err));
   }
 
   removeCardFromDOM() {

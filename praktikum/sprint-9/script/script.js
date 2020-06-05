@@ -17,7 +17,6 @@ const jobElem = root.querySelector('.user-info__job');
 const avatarElem = root.querySelector('.user-info__photo');
 
 const userInfo = new UserInfo(usernameElem, jobElem, avatarElem, userData);
-const userInfoApi = api.getUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo));
 
 const addPopupElem = root.querySelector('#popup-add');
 const addPopupCloseButton = addPopupElem.querySelector('.popup__close');
@@ -98,15 +97,8 @@ const cardSelectors = {
 const toggleLikeApi = api.toggleLike.bind(api);
 const removeCardApi = api.removeCard.bind(api);
 
-const iterateCards = function(initialCards) {
-  initialCards.forEach(cardData => {
-    const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors, toggleLikeApi, userData, removeCardApi);
-    const cardToAppend = newCard.create();
-    cards.push(cardToAppend);
-  });
-
-  cardList = new CardList({ placesList, cards });
-  cardList.render();
+function errorHandler(err) {
+  console.log(`Ошибка: ${err}`)
 }
 
 function getInputValue(form) {
@@ -121,35 +113,62 @@ function getInputValue(form) {
   return result;
 }
 
-const renderNewCard = function(cardData) {
-  const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors, toggleLikeApi, userData, removeCardApi);
-
-  cardList.addCard(newCard.create());
-};
-
-function submitAddCard(event) {
+function submitAddCard(event, errorHandler) {
   event.preventDefault();
 
   const cardData = getInputValue(event.target);
 
-  api.setNewCard('/cards', renderNewCard, cardData.name, cardData.link)
+  api.setNewCard('/cards', cardData.name, cardData.link)
+    .then(result => {
+      const newCard = new Card(templateCard, result, externalMethod, cardSelectors, toggleLikeApi, userData, removeCardApi, errorHandler);
 
-  addPopup.closePopup();
+      cardList.addCard(newCard.create());
+
+      addPopup.closePopup();
+    })
+    .catch(err => errorHandler(err));
 }
 
-function submitUserInfo(event) {
+function submitUserInfo(event, errorHandler) {
   event.preventDefault();
-  
+
   const form = event.target;
 
   const name = form.elements.username.value;
   const about = form.elements.job.value;
 
-  api.setUserInfo('/users/me', userInfo.setUserInfo.bind(userInfo), name, about)
+  api.setUserInfo('/users/me', name, about)
+    .then(result => {
+      userInfo.setUserInfo(result);
 
-  editPopup.closePopup();
+      editPopup.closePopup();
+    })
+    .catch(err => errorHandler(err));
 }
 
-api.getInitialCards('/cards', iterateCards);
-addForm.addEventListener('submit', submitAddCard);
-editForm.addEventListener('submit', submitUserInfo);
+api.getUserInfo('/users/me')
+  .then(result => {
+    userInfo.setUserInfo(result)
+  })
+  .catch(err => errorHandler(err));
+  
+cardList = new CardList({ placesList });
+
+api.getInitialCards('/cards')
+  .then(result => {
+    result.forEach(cardData => {
+      const newCard = new Card(templateCard, cardData, externalMethod, cardSelectors, toggleLikeApi, userData, removeCardApi, errorHandler);
+      const cardToAppend = newCard.create();
+      cards.push(cardToAppend);
+    });
+    // Надо исправить
+    // У вас должна быть сущность CardList, которая не создается внутри коллбэка. +
+    cardList.render(cards);
+  })
+  .catch(err => errorHandler(err));
+
+addForm.addEventListener('submit', event => submitAddCard(event, errorHandler));
+editForm.addEventListener('submit', event => submitUserInfo(event, errorHandler));
+
+// Добрый день
+// См. комментарии в классе Api. Его придется порядком изменить.
