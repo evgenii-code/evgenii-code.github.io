@@ -3,7 +3,6 @@
 class CardList {
   constructor({ placesList }) {
     this.placesList = placesList;
-    // this.cards = cards;
   }
 
   addCard(card) {

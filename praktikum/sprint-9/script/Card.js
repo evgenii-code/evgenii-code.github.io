@@ -23,8 +23,14 @@ class Card {
 
   like() {
     this.cardIsLiked = !this.cardIsLiked;
-
-    this.toggleLikeApi(`/cards/like/${this.cardId}`, this.cardIsLiked)
+    // Надо исправить
+    // Здесь и в подобных случаях -- URL должен быть инкапсулирован внутри класса Api, сюда, например,
+    // вы должны только id карты передать и флаг логический, но не путь.
+    // Причина простая. Представьте что API сервера меняет путь к карточкам с cards на places.
+    // Вам придется по всему проекту искать где вы этот путь указали и исправлять.
+    // А так -- достаточно внести исправления в класс. А еще пути можно собрать в объект с конфигом для вашего Api,
+    // который вы в конструктор Api закините, так тогда и класс менять не надо, достаточно конфиг отредактировать       +
+    this.toggleLikeApi({ id: this.cardId, isLiked: this.cardIsLiked })
       .then(result => {
         this.cardLikeButton.classList.toggle('place-card__like-icon_liked');
 
@@ -37,7 +43,7 @@ class Card {
     event.stopPropagation();
     if (!window.confirm('Вы действительно хотите удалить эту карточку?')) return
 
-    this.removeCardApi(`/cards/${this.cardId}`)
+    this.removeCardApi({ id: this.cardId })
       .then(result => {
         this.removeCardFromDOM(result);
       })
